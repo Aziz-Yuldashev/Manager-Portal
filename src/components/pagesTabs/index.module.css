@@ -1,0 +1,25 @@
+.container {
+    padding: 32px;
+}
+
+.titleBox {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.icon {
+    width: 48px;
+    height: 48px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+}
