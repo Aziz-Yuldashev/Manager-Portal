@@ -1,12 +1,9 @@
-import { VStack, Heading } from '@chakra-ui/react'
+import Header from '@/components/layout/header/index'
 
-/**
- * Simply Plug page if route doesnt exist
- */
 export default function Home() {
     return (
-        <VStack alignItems="center" justifyContent="center" height="100vh">
-            <Heading>Главная страница</Heading>
-        </VStack>
+        <div>
+            <Header />
+        </div>
     )
 }

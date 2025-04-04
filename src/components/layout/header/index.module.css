@@ -1,0 +1,125 @@
+.header {
+    max-width: 1600px;
+    height: 156px;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header__left {
+    background-color: #fff;
+
+    padding: 16px;
+    border-radius: 15px;
+}
+
+.header__left_box {
+    display: flex;
+}
+
+.header__left_title {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    gap: 12px;
+    position: relative;
+}
+
+.header__left_title::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    background-image: url('@/assets/images/avatar.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+.header__left_kaz,
+.header__left_rus {
+    background: none;
+    padding: 0px 12px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    height: 24px;
+}
+
+.header__left_kaz.active,
+.header__left_rus.active {
+    color: red;
+    border: 2px solid red;
+}
+
+.header__left_kaz:hover,
+.header__left_rus:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.header__info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 14px;
+    color: #757575;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+
+.header__info_item {
+    white-space: nowrap;
+}
+
+.header__status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header__status_icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('@/assets/images/avatarUser.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header__right_settingsLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #757575;
+    cursor: pointer;
+}
+
+.settingsIcon {
+    width: 16px;
+    height: 16px;
+}
+
+.header__right_button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
