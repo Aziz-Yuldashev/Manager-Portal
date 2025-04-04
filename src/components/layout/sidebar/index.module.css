@@ -4,7 +4,7 @@
     padding: 24px 40px;
 }
 
-.tabButton {
+.nav__tabButton {
     background: none;
     border: none;
     color: #757575;
@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-.active {
+.nav__active {
     color: red;
     font-weight: bold;
     border-bottom: 2px solid red;

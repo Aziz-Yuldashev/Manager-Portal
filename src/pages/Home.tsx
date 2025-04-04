@@ -1,6 +1,7 @@
 import { useTab } from '@/utils/providers/TabContext'
 import Header from '@/components/layout/header/index'
 import Sidebar from '@/components/layout/sidebar'
+import SidebarMenu from '@/components/layout/sidebarMenu'
 import Shop from '@/components/pagesTabs/shop/index'
 import Bills from '@/components/pagesTabs/bills/index'
 import Credit from '@/components/pagesTabs/credit/index'
@@ -33,7 +34,10 @@ export default function Home() {
         <div>
             <Header />
             <Sidebar />
-            {renderTab()}
+            <div style={{ display: 'flex', gap: '40px' }}>
+                <SidebarMenu />
+                {renderTab()}
+            </div>
         </div>
     )
 }

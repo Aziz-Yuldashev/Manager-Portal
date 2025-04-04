@@ -1,0 +1,45 @@
+.navSidebar {
+    padding: 0 40px;
+    width: 240px;
+    font-family: sans-serif;
+    background-color: #fff;
+}
+
+.navSidebar__company {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.navSidebar__companyText {
+    white-space: nowrap;
+}
+
+.arrowIcon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.navSidebar__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.navSidebar__item {
+    font-size: 16px;
+    color: #777;
+    cursor: pointer;
+}
+
+.navSidebar__active {
+    color: red;
+    font-weight: 500;
+}

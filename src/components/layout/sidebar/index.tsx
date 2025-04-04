@@ -21,7 +21,9 @@ export default function Sidebar() {
                 <button
                     key={tab.key}
                     onClick={() => setActiveTab(tab.key)}
-                    className={`${styled.tabButton} ${activeTab === tab.key ? styled.active : ''}`}
+                    className={`${styled.nav__tabButton} ${
+                        activeTab === tab.key ? styled.nav__active : ''
+                    }`}
                 >
                     {tab.label}
                 </button>
