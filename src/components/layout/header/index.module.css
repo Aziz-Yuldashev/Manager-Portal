@@ -121,3 +121,9 @@
     font-weight: 500;
     cursor: pointer;
 }
+
+@media (max-width: 811px) {
+    .header__right {
+        margin-top: 25px;
+    }
+}

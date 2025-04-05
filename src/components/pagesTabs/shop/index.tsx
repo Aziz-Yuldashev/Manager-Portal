@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useApi } from '@/utils/services'
 import { Order } from '@/utils/types/order.types'
 import settingsIcon from '@/assets/images/settings.svg'
@@ -6,6 +7,18 @@ import styles from './index.module.css'
 
 export default function Shop() {
     const { data: orders } = useApi<Order[]>('/data/orders.json')
+    const [searchValue, setSearchValue] = useState('')
+    const [hoveredOrderId, setHoveredOrderId] = useState<string | null>(null)
+
+    const filteredOrders = orders?.filter(
+        (order) =>
+            order.id.startsWith(searchValue) ||
+            order.title.toLowerCase().includes(searchValue.toLowerCase()),
+    )
+
+    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchValue(e.target.value)
+    }
 
     return (
         <div className={styles.shop}>
@@ -51,14 +64,41 @@ export default function Shop() {
                 <h3 className={styles.shop__ordersTitle}>Заказы</h3>
                 <div className={styles.shop__search}>
                     <img src={searchIcon} alt="search" />
-                    <input className={styles.shop__searchInput} placeholder="..." />
+                    <input
+                        onChange={onChange}
+                        className={styles.shop__searchInput}
+                        placeholder="..."
+                    />
                 </div>
-                {orders?.map((order) => (
-                    <div key={order.id} className={styles.shop__order}>
-                        <p className={styles.shop__product}>{order.title}</p>
-                        <span className={styles.shop__badge}>• {order.status}</span>
-                    </div>
-                ))}
+                {filteredOrders?.length ? (
+                    filteredOrders.map((order) => (
+                        <div
+                            key={order.id}
+                            className={styles.shop__order}
+                            onMouseEnter={() => setHoveredOrderId(order.id)}
+                            onMouseLeave={() => setHoveredOrderId(null)}
+                        >
+                            <p className={styles.shop__product}>{order.title}</p>
+                            <span className={styles.shop__badge}>• {order.status}</span>
+
+                            {hoveredOrderId === order.id && (
+                                <div className={styles.shop__tooltip}>
+                                    <p>
+                                        <strong>Заказ №:</strong> {order.id}
+                                    </p>
+                                    <p>
+                                        <strong>Товар:</strong> {order.title}
+                                    </p>
+                                    <p>
+                                        <strong>Описание:</strong> {order.description}
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    ))
+                ) : (
+                    <p className={styles.shop__textLight}>Нет результатов</p>
+                )}
             </div>
         </div>
     )
