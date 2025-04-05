@@ -1,8 +1,12 @@
-import styles from './index.module.css'
+import { useApi } from '@/utils/services'
+import { Order } from '@/utils/types/order.types'
 import settingsIcon from '@/assets/images/settings.svg'
 import searchIcon from '@/assets/images/search.svg'
+import styles from './index.module.css'
 
 export default function Shop() {
+    const { data: orders } = useApi<Order[]>('/data/orders.json')
+
     return (
         <div className={styles.shop}>
             <div className={styles.shop__info}>
@@ -49,12 +53,12 @@ export default function Shop() {
                     <img src={searchIcon} alt="search" />
                     <input className={styles.shop__searchInput} placeholder="..." />
                 </div>
-                <div className={styles.shop__order}>
-                    <p className={styles.shop__product}>
-                        Advanti T02-C03 универсальный красный, черный
-                    </p>
-                    <span className={styles.shop__badge}>• Выдан</span>
-                </div>
+                {orders?.map((order) => (
+                    <div key={order.id} className={styles.shop__order}>
+                        <p className={styles.shop__product}>{order.title}</p>
+                        <span className={styles.shop__badge}>• {order.status}</span>
+                    </div>
+                ))}
             </div>
         </div>
     )
