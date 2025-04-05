@@ -1,5 +1,9 @@
 # Manager-Portal
 
+## Live Demo
+
+🔗 [https://manager-portal.netlify.app](https://manager-portal.netlify.app)
+
 ## How to start dev mode
 
       yarn
