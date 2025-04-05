@@ -27,18 +27,19 @@
 
 ```
 ├── public
-│   └── logo.ico
+│   └── data/orders.json
 ├── src
 │   ├── assets
 |   |    ├── fonts
 |   |    └── images
 │   ├── components
-|   |     ├── UI
-|   |     └── shared
+|   |     ├── pagesTabs
+|   |     └── layout
+|   |     └── shared / UI
 │   ├──  pages
 |   |     ├── 404.tsx
-|   |     ├── Home.tsx
-|   |     └── Login.tsx
+|   |     ├── Main.tsx
+|   |
 │   ├── utils
 |   |     ├── constants
 |   |     ├── helpers
