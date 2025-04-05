@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { useApi } from '@/utils/services'
 import { OrderTypes } from '@/utils/types/order.types'
 import settingsIcon from '@/assets/images/settings.svg'
@@ -10,11 +10,14 @@ export default function Shop() {
     const [searchValue, setSearchValue] = useState('')
     const [hoveredOrderId, setHoveredOrderId] = useState<string | null>(null)
 
-    const filteredOrders = orders?.filter(
-        (order) =>
-            order.id.startsWith(searchValue) ||
-            order.title.toLowerCase().includes(searchValue.toLowerCase()),
-    )
+    const filteredOrders = useMemo(() => {
+        if (!orders) return []
+        return orders.filter(
+            (order) =>
+                order.id.startsWith(searchValue) ||
+                order.title.toLowerCase().includes(searchValue.toLowerCase()),
+        )
+    }, [orders, searchValue])
 
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
