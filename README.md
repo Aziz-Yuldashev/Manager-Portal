@@ -27,30 +27,39 @@
 
 ```
 ├── public
-│   └── data/orders.json
+│   └── data/orders.json                  # Мок-данные заказов
 ├── src
-│   ├── assets
-|   |    ├── fonts
-|   |    └── images
-│   ├── components
-|   |     ├── pagesTabs
-|   |     └── layout
-|   |     └── shared / UI
-│   ├──  pages
-|   |     ├── 404.tsx
-|   |     ├── Main.tsx
-|   |
+│   ├── assets                            # Статические файлы
+│   │   ├── fonts
+│   │   └── images
+│   ├── components                        # Общие компоненты
+│   │   └── layout                        # Header, Sidebar, SidebarMenu и т.д.
+│   │   └── shared                        # Переиспользуемые элементы
+│   │       └── UI                        # Кнопки, инпуты, лоадеры и т.п.
+│   ├── pages
+│   │   ├── 404.tsx
+│   │   ├── Main.tsx                      # Главная точка для main-страницы
+│   │   └── main
+│   │       └── components
+│   │           └── pagesTabs             # Контент вкладок (shop, bills, и т.д.)
+│   │               ├── shop
+│   │               ├── bills
+│   │               ├── credit
+│   │               ├── deposit
+│   │               ├── installment
+│   │               └── messages
 │   ├── utils
-|   |     ├── constants
-|   |     ├── helpers
-|   |     ├── providers
-|   |     ├── services
-|   |     ├── types
-|   |     └── AppRouter.tsx
-│   ├── index.css
-│   ├── App.tsx
-│   └── main.tsx
-├── tests
-├── vite.config.ts
+│   │   ├── constants                     # Статические значения
+│   │   ├── hooks                         # Кастомные хуки (например, useURLParameters)
+│   │   ├── providers                     # React Context, TabContext и другие
+│   │   ├── services                      # Axios, useApi и другие запросы
+│   │   ├── types                         # Все типы проекта
+│   │
+│   ├── index.css                         # Глобальные стили
+│   ├── App.tsx                           # Корневой компонент
+│   └── main.tsx                          # Точка входа в приложение
+├── tests                                 # Тесты, если будут
+├── vite.config.ts                        # Конфиг Vite
 └── README.md
+
 ```
