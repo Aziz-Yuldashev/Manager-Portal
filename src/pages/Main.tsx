@@ -18,7 +18,7 @@ const TABS = {
     messages: Messages,
 }
 
-export default function Home() {
+export default function Main() {
     const { activeTab } = useTab()
     const ActiveComponent = TABS[activeTab] ?? null
 
