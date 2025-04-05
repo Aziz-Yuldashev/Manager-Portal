@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { LanguageTypes } from '@/utils/types/lang.types'
 import styles from './index.module.css'
 import settingsIcon from '@/assets/images/settings.svg'
 
 export default function Header() {
-    const [activeLang, setActiveLang] = useState('Рус')
+    const [activeLang, setActiveLang] = useState<LanguageTypes>(LanguageTypes.RUS)
     return (
         <header className={styles.header}>
             <div className={styles.header__left}>
@@ -14,19 +15,19 @@ export default function Header() {
                     <div className={styles.header__left_box}>
                         <button
                             className={`${styles.header__left_kaz} ${
-                                activeLang === 'Қаз' ? styles.active : ''
+                                activeLang === LanguageTypes.KAZ ? styles.active : ''
                             }`}
-                            onClick={() => setActiveLang('Қаз')}
+                            onClick={() => setActiveLang(LanguageTypes.KAZ)}
                         >
-                            Қаз
+                            {LanguageTypes.KAZ}
                         </button>
                         <button
                             className={`${styles.header__left_rus} ${
-                                activeLang === 'Рус' ? styles.active : ''
+                                activeLang === LanguageTypes.RUS ? styles.active : ''
                             }`}
-                            onClick={() => setActiveLang('Рус')}
+                            onClick={() => setActiveLang(LanguageTypes.RUS)}
                         >
-                            Рус
+                            {LanguageTypes.RUS}
                         </button>
                     </div>
                 </div>
