@@ -2,12 +2,12 @@ import { useTab } from '@/utils/providers/TabContext'
 import Header from '@/components/layout/header/index'
 import Sidebar from '@/components/layout/sidebar'
 import SidebarMenu from '@/components/layout/sidebarMenu'
-import Shop from '@/components/pagesTabs/shop/index'
-import Bills from '@/components/pagesTabs/bills/index'
-import Credit from '@/components/pagesTabs/credit/index'
-import Deposit from '@/components/pagesTabs/deposit/index'
-import Installment from '@/components/pagesTabs/installment/index'
-import Messages from '@/components/pagesTabs/messages/index'
+import Shop from '@/pages/main/components/pagesTabs/shop/index'
+import Bills from '@/pages/main/components/pagesTabs/bills/index'
+import Credit from '@/pages/main/components/pagesTabs/credit/index'
+import Deposit from '@/pages/main/components/pagesTabs/deposit/index'
+import Installment from '@/pages/main/components/pagesTabs/installment/index'
+import Messages from '@/pages/main/components/pagesTabs/messages/index'
 
 const TABS = {
     shop: Shop,

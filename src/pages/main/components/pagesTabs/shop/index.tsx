@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useApi } from '@/utils/services'
-import { Order } from '@/utils/types/order.types'
+import { OrderTypes } from '@/utils/types/order.types'
 import settingsIcon from '@/assets/images/settings.svg'
 import searchIcon from '@/assets/images/search.svg'
 import styles from './index.module.css'
 
 export default function Shop() {
-    const { data: orders } = useApi<Order[]>('/data/orders.json')
+    const { data: orders } = useApi<OrderTypes[]>('/data/orders.json')
     const [searchValue, setSearchValue] = useState('')
     const [hoveredOrderId, setHoveredOrderId] = useState<string | null>(null)
 

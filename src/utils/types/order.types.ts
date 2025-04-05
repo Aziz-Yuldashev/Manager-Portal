@@ -1,4 +1,4 @@
-export type Order = {
+export type OrderTypes = {
     id: string
     title: string
     status: string
