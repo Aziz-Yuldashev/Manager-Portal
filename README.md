@@ -27,7 +27,9 @@
 
 ```
 ├── public
-│   └── data/orders.json                  # Мок-данные заказов
+│   ├── _redirects
+│   └── data/
+│       └── orders.json                  # Мок-данные заказов
 ├── src
 │   ├── assets                            # Статические файлы
 │   │   ├── fonts
